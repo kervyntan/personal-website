@@ -3,7 +3,9 @@
 </script>
 
 <template>
-    
+    <VAppBar>
+        
+    </VAppBar>
 </template>
 
   
