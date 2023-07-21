@@ -1,5 +1,14 @@
 <script lang="ts" setup>
 import Navbar from "@/views/Navbar.vue"
+import { ref } from "vue";
+
+const name = ref('')
+
+const email = ref('')
+
+const message = ref('')
+
+
 </script>
 
 <template>
@@ -45,7 +54,64 @@ import Navbar from "@/views/Navbar.vue"
                 <VBtn text="Lorem Ipsum" class="mx-auto rounded-pill px-9" />
             </VRow>
         </section>
+
+        <section class="section featured">
+            <h2 class="text-h2 text-white font-italic"> Featured Works </h2>
+            <VRow></VRow>
+            <VRow></VRow>
+            <VRow></VRow>
+            <VRow class="justify-center align-center" style="margin-top: 2rem;">
+                <VBtn text="View All Works" class="mx-auto rounded-pill px-9" />
+            </VRow>
+        </section>
+
+        <section class="section contact">
+            <h2 class="text-h2 text-white"> Reach Me </h2>
+            <VForm @submit.prevent="() => { }">
+                <VRow style="margin-top: 2rem;">
+                    <VCol cols="6">
+                        <VTextField class="landing-input" rounded variant="solo" v-model="name" label="Name"></VTextField>
+                    </VCol>
+                    <VCol cols="6">
+                        <VTextField class="landing-input" rounded variant="solo" v-model="email" label="Email Address"></VTextField>
+                    </VCol>
+                </VRow>
+                
+                <VRow style="margin-top: 2rem;">
+                    <VCol cols="12">
+                        <VTextarea class="landing-input landing-textarea" rounded v-model="message" label="Message"></VTextarea>
+                    </VCol>
+                </VRow>
+
+                <VRow class="justify-center align-center" style="margin-top: 2rem;">
+                    <VBtn text="Lorem Ipsum" class="mx-auto rounded-pill px-9" type="submit" />
+                </VRow>
+            </VForm>
+        </section>
+
+        <VRow class="justify-center align-center" style="margin-top : 4rem;">
+            <h6 class="text-h6 text-white"> Copyright &copy Kervyn Tan All Rights Reserved </h6>
+        </VRow>
     </VContainer>
 </template>
 
+<style>
+.v-label {
+  color: #fff;
+  opacity: 1;
+}
+
+.landing-input .v-field--variant-solo {
+    background: transparent;
+}
+
+.landing-input .v-label.v-field-label {
+    margin-inline-start : 30px !important;
+}
+
+.landing-textarea .v-label.v-field-label {
+    top : 45% !important;
+}
+
+</style>
   
