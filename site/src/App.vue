@@ -1,8 +1,11 @@
 <template>
+  <v-app>
+    <Navbar />
     <router-view />
+  </v-app>
 </template>
 
 <script lang="ts" setup>
-  //
-  import Default from "@/layouts/default/Default.vue"
+//
+import Navbar from "@/views/Navbar.vue"
 </script>

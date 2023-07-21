@@ -1,6 +1,10 @@
 <script lang="ts" setup>
 import Navbar from "@/views/Navbar.vue"
-import { ref } from "vue";
+import { ref, computed } from "vue";
+
+const formInvalidMsg = ref(false)
+const snackBarMessage = ref('')
+const snackBarColor = ref('info')
 
 const name = ref('')
 
@@ -8,10 +12,40 @@ const email = ref('')
 
 const message = ref('')
 
+const form = ref()
+
+const isValidName = computed(() => name.value.length > 0)
+const isValidEmail = computed(() => /^[^@]+@\w+(\.\w+)+\w$/.test(email.value))
+const isFormValid = computed(() => isValidName.value && isValidEmail.value)
+
+const handleSubmit = () => {
+
+    // set up email send out
+
+    if (isFormValid.value) {
+        formInvalidMsg.value = true
+        snackBarColor.value = 'success'
+        snackBarMessage.value = 'Form has been successfully submitted.'
+    } else {
+        formInvalidMsg.value = true
+        snackBarColor.value = 'error'
+        snackBarMessage.value = 'Form fields have been inputted wrongly. Please try again.'
+    }
+
+}
 
 </script>
 
 <template>
+    <VSnackbar v-model="formInvalidMsg" location="top center" variant="flat" :color="snackBarColor">
+        {{ snackBarMessage }}
+
+        <template #actions>
+            <VBtn color="info" @click="formInvalidMsg = false">
+                Close
+            </VBtn>
+        </template>
+    </VSnackbar>
     <VContainer>
         <!-- Hero -->
         <section class="section hero">
@@ -26,14 +60,17 @@ const message = ref('')
                     </VCard>
                 </VCol>
                 <VCol cols="6">
-                    <VImg :width=500 class="mx-auto" src='@/assets/technology.png' />
+                    <VImg :width=500 class="ml-auto" src='@/assets/technology.png' />
                 </VCol>
             </VRow>
         </section>
 
         <!-- About -->
         <section class="section about">
-            <VImg :width="200" src='@/assets/cloud.png' />
+            <div class="d-inline-flex" style="position : relative;">
+                <VImg :width="200" src='@/assets/cloud.png' />
+                <VImg style="position : absolute; right: 0; top: -25%;" :width="50" src='@/assets/sun.png' />
+            </div>
             <h2 class="text-h2 text-white mt-4"> About Me </h2>
             <VCard class="d-flex px-5 py-5 mt-4">
                 <!-- <VImg /> -->
@@ -66,20 +103,24 @@ const message = ref('')
         </section>
 
         <section class="section contact">
-            <h2 class="text-h2 text-white"> Reach Me </h2>
-            <VForm @submit.prevent="() => { }">
+            <h2 class="text-h2 text-white d-inline-flex"> 
+                Reach Me <VImg :width="50" src="@/assets/network-icon.png" />
+            </h2>
+            <VForm ref="form" @submit.prevent="handleSubmit">
                 <VRow style="margin-top: 2rem;">
                     <VCol cols="6">
-                        <VTextField class="landing-input" rounded variant="solo" v-model="name" label="Name"></VTextField>
+                        <VTextField class="landing-input" rounded variant="solo" v-model="name" label="Name">
+                        </VTextField>
                     </VCol>
                     <VCol cols="6">
-                        <VTextField class="landing-input" rounded variant="solo" v-model="email" label="Email Address"></VTextField>
+                        <VTextField class="landing-input" rounded variant="solo" v-model="email" label="Email Address">
+                        </VTextField>
                     </VCol>
                 </VRow>
-                
+
                 <VRow style="margin-top: 2rem;">
                     <VCol cols="12">
-                        <VTextarea class="landing-input landing-textarea" rounded v-model="message" label="Message"></VTextarea>
+                        <VTextarea class="landing-input landing-textarea" v-model="message" label="Message"></VTextarea>
                     </VCol>
                 </VRow>
 
@@ -90,15 +131,19 @@ const message = ref('')
         </section>
 
         <VRow class="justify-center align-center" style="margin-top : 4rem;">
-            <h6 class="text-h6 text-white"> Copyright &copy Kervyn Tan All Rights Reserved </h6>
+            <h6 class="text-h6 text-white"> Copyright &copy; Kervyn Tan All Rights Reserved </h6>
         </VRow>
     </VContainer>
 </template>
 
 <style>
+.hero .v-col.v-col-6 {
+    padding: 0;
+}
+
 .v-label {
-  color: #fff;
-  opacity: 1;
+    color: #fff;
+    opacity: 1;
 }
 
 .landing-input .v-field--variant-solo {
@@ -106,12 +151,7 @@ const message = ref('')
 }
 
 .landing-input .v-label.v-field-label {
-    margin-inline-start : 30px !important;
+    margin-inline-start: 50px !important;
 }
-
-.landing-textarea .v-label.v-field-label {
-    top : 45% !important;
-}
-
 </style>
   

@@ -4,7 +4,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 const routes = [
   {
     path: '/',
-    component: () => import(/* webpackChunkName: "home" */ '@/pages/Home.vue'),
     children: [
       {
         path: '/home',
