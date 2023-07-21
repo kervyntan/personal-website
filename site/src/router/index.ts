@@ -4,7 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 const routes = [
   {
     path: '/',
-    component: () => import('@/layouts/default/AppBar.vue'),
+    component: () => import(/* webpackChunkName: "home" */ '@/pages/Home.vue'),
     children: [
       {
         path: '/home',
@@ -15,10 +15,21 @@ const routes = [
         component: () => import(/* webpackChunkName: "home" */ '@/pages/Home.vue'),
       },
       {
-        path: '/helloworld',
-        name: 'HelloWorld',
-        component: () => import(/* webpackChunkName: "helloworld" */ '@/views/HelloWorld.vue'),
-      }
+        path: '/about',
+        name: 'About',
+        component: () => import(/* webpackChunkName: "about" */ '@/pages/About.vue'),
+      },
+      {
+        path: '/portfolio',
+        name: 'Portfolio',
+        component: () => import('@/pages/Portfolio.vue'),
+      },
+      {
+        path: '/contact',
+        name: 'Contact',
+        component: () => import('@/pages/Contact.vue'),
+      },
+      
     ],
   },
 ]
