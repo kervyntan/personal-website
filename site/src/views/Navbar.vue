@@ -9,7 +9,7 @@ import { VImg, VList } from 'vuetify/lib/components/index.mjs';
     <VContainer>
         <VRow class="align-center">
             <VCol cols="3">
-                <a class="" href="/home">
+                <a class="" href="/">
                     <VImg class="navbar-logo" src="@/assets/cloud.png" />
                 </a>
             </VCol>

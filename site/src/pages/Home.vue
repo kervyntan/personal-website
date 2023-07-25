@@ -1,27 +1,18 @@
 <script lang="ts" setup>
-import Navbar from "@/views/Navbar.vue"
-import { ref, computed } from "vue";
+import ContactForm from "@/views/ContactForm.vue"
+import { watch } from "vue";
+import { ref } from "vue";
+import { useFormStore } from "@/store/useFormStore";
+import { storeToRefs } from "pinia";
+
+const formStore = useFormStore();
+const { isFormValid, formSubmissionCounter } = storeToRefs(formStore)
 
 const formInvalidMsg = ref(false)
 const snackBarMessage = ref('')
 const snackBarColor = ref('info')
 
-const name = ref('')
-
-const email = ref('')
-
-const message = ref('')
-
-const form = ref()
-
-const isValidName = computed(() => name.value.length > 0)
-const isValidEmail = computed(() => /^[^@]+@\w+(\.\w+)+\w$/.test(email.value))
-const isFormValid = computed(() => isValidName.value && isValidEmail.value)
-
-const handleSubmit = () => {
-
-    // set up email send out
-
+watch(formSubmissionCounter, () => {
     if (isFormValid.value) {
         formInvalidMsg.value = true
         snackBarColor.value = 'success'
@@ -31,13 +22,12 @@ const handleSubmit = () => {
         snackBarColor.value = 'error'
         snackBarMessage.value = 'Form fields have been inputted wrongly. Please try again.'
     }
-
-}
+})
 
 </script>
 
 <template>
-    <VSnackbar v-model="formInvalidMsg" location="top center" variant="flat" :color="snackBarColor">
+    <VSnackbar v-model="formInvalidMsg" timeout="3000" location="top center" variant="flat" :color="snackBarColor">
         {{ snackBarMessage }}
 
         <template #actions>
@@ -103,31 +93,11 @@ const handleSubmit = () => {
         </section>
 
         <section class="section contact">
-            <h2 class="text-h2 text-white d-inline-flex"> 
-                Reach Me <VImg :width="50" src="@/assets/network-icon.png" />
+            <h2 class="text-h2 text-white d-inline-flex">
+                Reach Me
+                <VImg :widthz="50" src="@/assets/network-icon.png" />
             </h2>
-            <VForm ref="form" @submit.prevent="handleSubmit">
-                <VRow style="margin-top: 2rem;">
-                    <VCol cols="6">
-                        <VTextField class="landing-input" rounded variant="solo" v-model="name" label="Name">
-                        </VTextField>
-                    </VCol>
-                    <VCol cols="6">
-                        <VTextField class="landing-input" rounded variant="solo" v-model="email" label="Email Address">
-                        </VTextField>
-                    </VCol>
-                </VRow>
-
-                <VRow style="margin-top: 2rem;">
-                    <VCol cols="12">
-                        <VTextarea class="landing-input landing-textarea" v-model="message" label="Message"></VTextarea>
-                    </VCol>
-                </VRow>
-
-                <VRow class="justify-center align-center" style="margin-top: 2rem;">
-                    <VBtn text="Lorem Ipsum" class="mx-auto rounded-pill px-9" type="submit" />
-                </VRow>
-            </VForm>
+            <ContactForm />
         </section>
 
         <VRow class="justify-center align-center" style="margin-top : 4rem;">
