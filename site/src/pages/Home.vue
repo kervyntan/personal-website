@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import ContactForm from "@/views/ContactForm.vue"
+import CloudAndSun from "@/views/CloudAndSun.vue"
 import { watch } from "vue";
 import { ref } from "vue";
 import { useFormStore } from "@/store/useFormStore";
@@ -57,10 +58,7 @@ watch(formSubmissionCounter, () => {
 
         <!-- About -->
         <section class="section about">
-            <div class="d-inline-flex" style="position : relative;">
-                <VImg :width="200" src='@/assets/cloud.png' />
-                <VImg style="position : absolute; right: 0; top: -25%;" :width="50" src='@/assets/sun.png' />
-            </div>
+            <CloudAndSun />
             <h2 class="text-h2 text-white mt-4"> About Me </h2>
             <VCard class="d-flex px-5 py-5 mt-4">
                 <!-- <VImg /> -->
@@ -95,7 +93,7 @@ watch(formSubmissionCounter, () => {
         <section class="section contact">
             <h2 class="text-h2 text-white d-inline-flex">
                 Reach Me
-                <VImg :widthz="50" src="@/assets/network-icon.png" />
+                <VImg :width="50" src="@/assets/network-icon.png" />
             </h2>
             <ContactForm />
         </section>
