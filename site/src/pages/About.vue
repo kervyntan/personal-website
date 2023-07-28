@@ -13,6 +13,8 @@ const items = [
         icon: 'mdi-alert-circle',
     },
 ]
+
+const truth = true
 </script>
 
 <template>
@@ -39,3 +41,9 @@ const items = [
 
     </VContainer>
 </template>
+
+<style>
+.v-timeline-item__opposite {
+    display : none;
+}
+</style>
