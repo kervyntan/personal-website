@@ -9,6 +9,18 @@ import { storeToRefs } from "pinia";
 const formStore = useFormStore();
 const { isFormValid, formSubmissionCounter } = storeToRefs(formStore)
 
+// const target = ref<HTMLElement>();
+// const variants = ref<MotionVariants>({
+//   initial: {
+//     opacity: 0,
+//   },
+//   enter: {
+//     opacity: 1,
+//   },
+// })
+
+// const motionInstance = useM
+
 const formInvalidMsg = ref(false)
 const snackBarMessage = ref('')
 const snackBarColor = ref('info')
@@ -28,7 +40,7 @@ watch(formSubmissionCounter, () => {
 </script>
 
 <template>
-    <VSnackbar v-model="formInvalidMsg" timeout="3000" location="top center" variant="flat" :color="snackBarColor">
+    <VSnackbar transition="slide-y-transition" v-model="formInvalidMsg" timeout="3000" location="top center" variant="flat" :color="snackBarColor">
         {{ snackBarMessage }}
 
         <template #actions>
@@ -57,7 +69,7 @@ watch(formSubmissionCounter, () => {
         </section>
 
         <!-- About -->
-        <section class="section about">
+        <section class="section about" v-motion-fade-visible>
             <CloudAndSun />
             <h2 class="text-h2 text-white mt-4"> About Me </h2>
             <VCard class="d-flex px-5 py-5 mt-4">
@@ -80,7 +92,7 @@ watch(formSubmissionCounter, () => {
             </VRow>
         </section>
 
-        <section class="section featured">
+        <section class="section featured" v-motion-fade-visible>
             <h2 class="text-h2 text-white font-italic"> Featured Works </h2>
             <VRow></VRow>
             <VRow></VRow>
@@ -90,7 +102,7 @@ watch(formSubmissionCounter, () => {
             </VRow>
         </section>
 
-        <section class="section contact">
+        <section class="section contact" v-motion-fade-visible>
             <h2 class="text-h2 text-white d-inline-flex">
                 Reach Me
                 <VImg :width="50" src="@/assets/network-icon.png" />
