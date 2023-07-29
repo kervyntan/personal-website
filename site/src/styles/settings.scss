@@ -40,4 +40,19 @@ p
 
 .v-card-title {
     white-space: normal !important;
+    padding : 0;
+    margin-block: 1rem;
+}
+
+.fade-display {
+    transition : all 2s linear; 
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity : 1;
+    }
 }

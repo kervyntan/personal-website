@@ -9,18 +9,6 @@ import { storeToRefs } from "pinia";
 const formStore = useFormStore();
 const { isFormValid, formSubmissionCounter } = storeToRefs(formStore)
 
-// const target = ref<HTMLElement>();
-// const variants = ref<MotionVariants>({
-//   initial: {
-//     opacity: 0,
-//   },
-//   enter: {
-//     opacity: 1,
-//   },
-// })
-
-// const motionInstance = useM
-
 const formInvalidMsg = ref(false)
 const snackBarMessage = ref('')
 const snackBarColor = ref('info')
@@ -40,7 +28,7 @@ watch(formSubmissionCounter, () => {
 </script>
 
 <template>
-    <VSnackbar transition="slide-y-transition" v-model="formInvalidMsg" timeout="3000" location="top center" variant="flat" :color="snackBarColor">
+    <VSnackbar v-model="formInvalidMsg" timeout="3000" location="top center" variant="flat" :color="snackBarColor">
         {{ snackBarMessage }}
 
         <template #actions>
