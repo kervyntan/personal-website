@@ -57,7 +57,7 @@ watch(formSubmissionCounter, () => {
         </section>
 
         <!-- About -->
-        <section class="section about" v-motion-fade-visible>
+        <section class="section about" v-motion-fade>
             <CloudAndSun />
             <h2 class="text-h2 text-white mt-4"> About Me </h2>
             <VCard class="d-flex px-5 py-5 mt-4">
@@ -107,19 +107,6 @@ watch(formSubmissionCounter, () => {
 <style>
 .hero .v-col.v-col-6 {
     padding: 0;
-}
-
-.v-label {
-    color: #fff;
-    opacity: 1;
-}
-
-.landing-input .v-field--variant-solo {
-    background: transparent;
-}
-
-.landing-input .v-label.v-field-label {
-    margin-inline-start: 50px !important;
 }
 </style>
   
