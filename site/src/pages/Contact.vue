@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import ContactForm from '@/views/ContactForm.vue';
+import DownloadCV from '@/views/DownloadCV.vue';
 
 
 </script>
@@ -12,6 +13,9 @@ import ContactForm from '@/views/ContactForm.vue';
                 Contact
             </h2>
         </div>
-        <ContactForm />
+        <VRow class="justify-space-between" style="gap: 2rem;">
+            <ContactForm class="w-75"/>
+            <DownloadCV style="width: 20%;"/>
+        </VRow>
     </VContainer>
 </template>
