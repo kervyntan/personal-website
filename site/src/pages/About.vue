@@ -30,11 +30,11 @@ const truth = true
             <VIcon> mdi-account </VIcon>
             <VTimeline side="end" direction="vertical">
                 <VTimelineItem v-for="item in items" :key="item.id" :dot-color="item.color" size="small">
-                    <v-alert :value="true" :color="item.color" :icon="item.icon">
+                    <VAlert :value="truth" :color="item.color" :icon="item.icon">
                         Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod
                         convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an
                         salutandi sententiae.
-                    </v-alert>
+                    </VAlert>
                 </VTimelineItem>
             </VTimeline>
         </section>

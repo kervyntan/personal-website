@@ -9,7 +9,9 @@ const downloadResume = () => {
 <template>
     <VCard class="download-card" variant="text" rounded="true">
         <div>
-            <VIcon @click="downloadResume"> mdi-download </VIcon>
+            <a href="src/assets/resumes/Kervyn Tan-Resume.pdf" download>
+                <VIcon @click="downloadResume"> mdi-file-download-outline </VIcon>
+            </a>
         </div>
     </VCard>
 </template>

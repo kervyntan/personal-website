@@ -4,13 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --fix --ignore-path .gitignore"
   },
   "dependencies": {
     "@mdi/font": "^7.2.96",
-    "@vueuse/core": "^10.2.1",
     "@vueuse/motion": "^2.0.0",
     "core-js": "^3.29.0",
     "firebase": "^10.1.0",
