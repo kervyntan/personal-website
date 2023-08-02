@@ -47,9 +47,9 @@ a {
 }
 
 .download-card {
-    display: grid;
+    display: grid !important;
     place-items: center;
-    background-image: linear-gradient(#2fb5c8, #286ede);
+    background-image: linear-gradient(#2fb5c8, #286ede) !important;
     padding-block: 20px;    
 }
 
