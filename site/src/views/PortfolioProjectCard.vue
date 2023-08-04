@@ -18,7 +18,7 @@ const getImageUrl = () => {
 
 <template>
     <VCard color="transparent" variant="text" class="flex-1-1-100">
-        <VRow class="d-flex flex-wrap" style="gap: 0.75rem;">
+        <VRow class="d-flex flex-wrap" style="gap: 0.75rem;" no-gutters>
             <SkillLabel v-for="skill in skills" :key="skills?.indexOf(skill)" imgFileName="web-dev.png" :skill="skill" />
         </VRow>
         <VCardTitle class="project-title text-white">
