@@ -40,7 +40,7 @@ watch(formSubmissionCounter, () => {
     <VContainer>
         <!-- Hero -->
         <section class="section hero">
-            <VRow class="align-center">
+            <VRow class="align-center" no-gutters>
                 <VCol cols="6">
                     <VCard variant="text">
                         <VCardTitle class="text-white"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis
@@ -62,7 +62,7 @@ watch(formSubmissionCounter, () => {
             <h2 class="text-h2 text-white mt-4"> About Me </h2>
             <VCard class="d-flex px-5 py-5 mt-4">
                 <!-- <VImg /> -->
-                <VRow class="align-center">
+                <VRow class="align-center" no-gutters>
                     <VCol cols="3">
                         <div style="background-image: linear-gradient(#2fb5c8, #286ede); width: 250px; height: 200px;">
                         </div>
@@ -75,17 +75,17 @@ watch(formSubmissionCounter, () => {
                     </VCol>
                 </VRow>
             </VCard>
-            <VRow class="justify-center align-center" style="margin-top : 2rem;">
+            <VRow class="justify-center align-center" style="margin-top : 2rem;" no-gutters> 
                 <VBtn text="Lorem Ipsum" class="mx-auto rounded-pill px-9" />
             </VRow>
         </section>
 
         <section class="section featured" v-motion-fade-visible>
             <h2 class="text-h2 text-white font-italic"> Featured Works </h2>
-            <VRow></VRow>
-            <VRow></VRow>
-            <VRow></VRow>
-            <VRow class="justify-center align-center" style="margin-top: 2rem;">
+            <VRow  no-gutters></VRow>
+            <VRow  no-gutters></VRow>
+            <VRow  no-gutters></VRow>
+            <VRow class="justify-center align-center" style="margin-top: 2rem;" no-gutters>
                 <VBtn text="View All Works" class="mx-auto rounded-pill px-9" />
             </VRow>
         </section>
@@ -95,10 +95,10 @@ watch(formSubmissionCounter, () => {
                 Reach Me
                 <VImg :width="50" src="@/assets/network-icon.png" />
             </h2>
-            <ContactForm />
+            <ContactForm style="margin-top: 2rem;"/>
         </section>
 
-        <VRow class="justify-center align-center" style="margin-top : 4rem;">
+        <VRow class="justify-center align-center" style="margin-top : 4rem;" no-gutters>
             <h6 class="text-h6 text-white"> Copyright &copy; Kervyn Tan All Rights Reserved </h6>
         </VRow>
     </VContainer>

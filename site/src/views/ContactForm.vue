@@ -16,7 +16,7 @@ const handleSubmit = async () => {
 
 <template>
     <VForm ref="form" @submit.prevent="handleSubmit">
-        <VRow style="margin-top: 2rem;">
+        <VRow>
             <VCol cols="6">
                 <VTextField class="landing-input" rounded variant="solo" v-model="name" label="Name" />
             </VCol>
