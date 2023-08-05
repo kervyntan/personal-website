@@ -15,7 +15,7 @@ import DownloadCV from '@/views/DownloadCV.vue';
         </div>
         <VRow justify-sm="center" justify-md="space-between" class="flex-sm-column flex-md-row" style="margin-top: 2rem; gap: 2rem;" no-gutters>
             <ContactForm class="flex-1-1" style="width: 70%;"/>
-            <DownloadCV style="width: 25%;"/>
+            <DownloadCV class="w-25"/>
         </VRow>
     </VContainer>
 </template>
