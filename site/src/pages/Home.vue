@@ -38,11 +38,12 @@ watch(formSubmissionCounter, () => {
         </template>
     </VSnackbar>
     <VContainer>
+
         <!-- Hero -->
         <section class="section hero">
-            <VRow class="align-center" no-gutters>
-                <VCol cols="6">
-                    <VCard variant="text">
+            <VRow class="align-center flex-column flex-sm-row" no-gutters>
+                <VCol xs="12" sm="6" class="order-2 order-sm-1">
+                    <VCard variant="text" class="text-center text-sm-left">
                         <VCardTitle class="text-white"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis
                             molestiae quibusdam qui deserunt voluptatum quis nobis, perferendis eum dolorem cupiditate
                             eligendi voluptates ad, inventore, explicabo nisi soluta reiciendis nesciunt obcaecati?
@@ -50,27 +51,27 @@ watch(formSubmissionCounter, () => {
                         <VBtn class="rounded-pill px-9" text="Lorem Ipsum"></VBtn>
                     </VCard>
                 </VCol>
-                <VCol cols="6">
+                <VCol xs="12" sm="6" class="order-1 order-sm-2">
                     <VImg :width=500 class="ml-auto" src='@/assets/technology.png' />
                 </VCol>
             </VRow>
         </section>
 
         <!-- About -->
-        <section class="section about" v-motion-fade>
+        <section class="section about text-center text-sm-left" v-motion-fade>
             <CloudAndSun />
             <h2 class="text-h2 text-white mt-4"> About Me </h2>
             <VCard class="d-flex px-5 py-5 mt-4">
                 <!-- <VImg /> -->
-                <VRow class="align-center" no-gutters>
-                    <VCol cols="3">
-                        <div style="background-image: linear-gradient(#2fb5c8, #286ede); width: 250px; height: 200px;">
+                <VRow class="align-center justify-space-between flex-column flex-sm-row" no-gutters>
+                    <VCol xs="12" sm="4">
+                        <div style="background-image: linear-gradient(#2fb5c8, #286ede); height: 200px;">
                         </div>
                     </VCol>
-                    <VCol cols="9">
-                        <VCardTitle> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore veniam debitis harum
+                    <VCol xs="12" sm="7">
+                        <VCardTitle class="text-blue font-weight-bold text-left"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore veniam debitis harum
                             mollitia minus rem perferendis nobis</VCardTitle>
-                        <VCardText> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum corporis odit nesciunt
+                        <VCardText class="pl-0 text-left"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum corporis odit nesciunt
                             beatae? Minus veniam sit neque eum. Qui, ab!</VCardText>
                     </VCol>
                 </VRow>
@@ -98,8 +99,8 @@ watch(formSubmissionCounter, () => {
             <ContactForm style="margin-top: 2rem;"/>
         </section>
 
-        <VRow class="justify-center align-center" style="margin-top : 4rem;" no-gutters>
-            <h6 class="text-h6 text-white"> Copyright &copy; Kervyn Tan All Rights Reserved </h6>
+        <VRow class="justify-center align-center" style="margin-top : 4rem;">
+            <h6 class="text-h6 text-white text-center"> Copyright &copy; Kervyn Tan <br class="d-block d-sm-none"/>All Rights Reserved </h6>
         </VRow>
     </VContainer>
 </template>

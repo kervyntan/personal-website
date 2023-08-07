@@ -1,19 +1,9 @@
 <script setup lang="ts">
 import CloudAndSun from "@/views/CloudAndSun.vue"
 import SkillLabel from "@/views/SkillLabel.vue";
+import { ref } from 'vue'
 
-const items = [
-    {
-        id: 1,
-        color: 'info',
-        icon: 'mdi-information',
-    },
-    {
-        id: 2,
-        color: 'error',
-        icon: 'mdi-alert-circle',
-    },
-]
+const showDescription = ref(true)
 
 </script>
 
@@ -27,10 +17,8 @@ const items = [
         </section>
 
         <section class="timeline">
-            <!-- <VIcon> mdi-account </VIcon> -->
             <VTimeline truncate-line="start" align="start" side="end" direction="vertical">
-                <!-- <VTimelineItem v-for="item in items" :key="item.id" :dot-color="item.color" size="small"> -->
-                <VTimelineItem :dot-color="items[0].color" size="small">
+                <VTimelineItem dot-color="info" size="small">
                     <VCard class="text-white" variant="text">
                         <h3 class="text-h4 text-md-h3 d-inline-flex align-center">
                             Who Is Kervyn? <VCardText> (Formally)</VCardText>
@@ -42,7 +30,7 @@ const items = [
                                 University of Singapore! :-)
                                 Over the past 2-3 years, through my internship and project experiences, I have
                                 discovered a
-                                inner passion of mine - <strong> Programming & Problem Solving in general</strong>.
+                                inner passion of mine - <span class="font-weight-bold"> Programming & Problem Solving in general </span>.
                             </VListItem>
 
                             <VListItem tag="li">
@@ -60,7 +48,7 @@ const items = [
                         </VList>
                     </VCard>
                 </VTimelineItem>
-                <VTimelineItem :dot-color="items[0].color" size="small">
+                <VTimelineItem dot-color="info" size="small">
                     <VCard class="text-white" variant="text">
                         <h3 class="text-h4 text-md-h3">
                             Hobbies & Interests
@@ -75,16 +63,25 @@ const items = [
                                 web frameworks/libraries such as
                                 Vue and ReactJS in order to build a website.
                             </VListItem>
+                            <VListItem tag="li">
+                                Other hobbies of mine include reading, cycling on the weekends and getting to know new people!
+                            </VListItem>
                         </VList>
                     </VCard>
                 </VTimelineItem>
 
                 <VTimelineItem size="small" v-motion-fade-visible>
                     <VCard class="text-white" variant="text">
-                        <h3 class="text-h4 text-md-h3 mb-5">
+                        <h3 class="text-h4 text-md-h3 mb-5 d-inline-flex d-sm-block">
                             Experiences
+                            <VIcon class="d-xs-inline d-sm-none" v-if="!showDescription"
+                                @click="() => showDescription = !showDescription"> mdi-menu-up
+                            </VIcon>
+                            <VIcon class="d-xs-inline d-sm-none" v-if="showDescription"
+                                @click="() => showDescription = !showDescription"> mdi-menu-down
+                            </VIcon>
                         </h3>
-                        <VTimeline align="start">
+                        <VTimeline v-if="showDescription" align="start">
                             <VTimelineItem size="x-small" v-motion-fade-visible>
                                 <!-- <VCard variant="text"> -->
                                 <h4 class="text-h5 text-md-h4">
@@ -131,24 +128,24 @@ const items = [
                                     <VList bg-color="transparent" tag="ul">
 
                                         <VListItem prepend-icon="mdi-circle-small" class="mt-5">
-                                                Created an interactive news page from scratch using HTML, CSS, JavaScript, and
-                                                Slick Slider.
+                                            Created an interactive news page from scratch using HTML, CSS, JavaScript, and
+                                            Slick Slider.
                                         </VListItem>
 
                                         <VListItem prepend-icon="mdi-circle-small" class="mt-2">
-                                                Conducted website maintenances and compiled page health, page speed findings
-                                                into
-                                                reports for clients.
+                                            Conducted website maintenances and compiled page health, page speed findings
+                                            into
+                                            reports for clients.
                                         </VListItem>
 
                                         <VListItem prepend-icon="mdi-circle-small" class="mt-2">
-                                                Assisted in the architecture and conceptualiztion of a QMS (Queue Management
-                                                System).
+                                            Assisted in the architecture and conceptualiztion of a QMS (Queue Management
+                                            System).
                                         </VListItem>
 
                                         <VListItem prepend-icon="mdi-circle-small" class="mt-2">
-                                                Developed websites using WordPress while employing custom styling to suit
-                                                client’s needs.
+                                            Developed websites using WordPress while employing custom styling to suit
+                                            client’s needs.
                                         </VListItem>
                                     </VList>
                                 </VCard>
@@ -166,31 +163,32 @@ const items = [
                                     <VList bg-color="transparent" tag="ul">
 
                                         <VListItem prepend-icon="mdi-circle-small" class="mt-5">
-                                                Led the development of a hardware devices dashboard using Vue, Vuetify,
-                                                and in-house API.
+                                            Led the development of a hardware devices dashboard using Vue, Vuetify,
+                                            and in-house API.
                                         </VListItem>
 
                                         <VListItem prepend-icon="mdi-circle-small" class="mt-2">
-                                                Assisted in building a payment collection system using React frontend,
-                                                MySQL backend and communicating with hardware and payment APIs.
+                                            Assisted in building a payment collection system using React frontend,
+                                            MySQL backend and communicating with hardware and payment APIs.
                                         </VListItem>
 
                                         <VListItem prepend-icon="mdi-circle-small" class="mt-2">
-                                                Conceptualized and developed a luggage deposit and retrieval system using
-                                                React frontend, PostgreSQL backend, and Banana PI for the in-house API.
-                                        </VListItem>
-                                        
-                                        <VListItem prepend-icon="mdi-circle-small" class="mt-2">
-                                                Spearheaded the implementation and development of a website using Shopify,
-                                                involving the creation of custom embedded code using HTML, CSS, and JS.
+                                            Conceptualized and developed a luggage deposit and retrieval system using
+                                            React frontend, PostgreSQL backend, and Banana PI for the in-house API.
                                         </VListItem>
 
                                         <VListItem prepend-icon="mdi-circle-small" class="mt-2">
-                                                Assisted in the development and sitemap construction of websites using WordPress.
+                                            Spearheaded the implementation and development of a website using Shopify,
+                                            involving the creation of custom embedded code using HTML, CSS, and JS.
                                         </VListItem>
-                                        
+
                                         <VListItem prepend-icon="mdi-circle-small" class="mt-2">
-                                                Custom development of a website built on top of a Wix template.
+                                            Assisted in the development and sitemap construction of websites using
+                                            WordPress.
+                                        </VListItem>
+
+                                        <VListItem prepend-icon="mdi-circle-small" class="mt-2">
+                                            Custom development of a website built on top of a Wix template.
                                         </VListItem>
                                     </VList>
                                 </VCard>

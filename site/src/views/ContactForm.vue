@@ -16,22 +16,22 @@ const handleSubmit = async () => {
 
 <template>
     <VForm ref="form" @submit.prevent="handleSubmit">
-        <VRow>
-            <VCol cols="6">
+        <VRow class="flex-column flex-sm-row">
+            <VCol xs="12" sm="6">
                 <VTextField class="landing-input" rounded variant="solo" v-model="name" label="Name" />
             </VCol>
-            <VCol cols="6">
+            <VCol xs="12" sm="6">
                 <VTextField class="landing-input" rounded variant="solo" v-model="email" label="Email Address" />
             </VCol>
         </VRow>
 
-        <VRow style="margin-top: 2rem;">
+        <VRow class="mt-9 mt-sm-5" no-gutters>
             <VCol cols="12">
                 <VTextarea class="landing-input landing-textarea" v-model="message" label="Message" />
             </VCol>
         </VRow>
 
-        <VRow class="justify-center align-center" style="margin-top: 2rem;">
+        <VRow class="justify-center align-center" style="margin-top: 2rem;" no-gutters>
             <VBtn text="Submit" class="mx-auto rounded-pill px-9" type="submit" />
         </VRow>
     </VForm>
