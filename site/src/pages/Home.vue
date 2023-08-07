@@ -81,8 +81,9 @@ watch(formSubmissionCounter, () => {
             </VRow>
         </section>
 
+        <!-- Featured Works  -->
         <section class="section featured" v-motion-fade-visible>
-            <h2 class="text-h2 text-white font-italic"> Featured Works </h2>
+            <h2 class="text-h3 text-sm-h2 text-white font-italic text-center text-sm-left"> Featured Works </h2>
             <VRow  no-gutters></VRow>
             <VRow  no-gutters></VRow>
             <VRow  no-gutters></VRow>
@@ -91,11 +92,14 @@ watch(formSubmissionCounter, () => {
             </VRow>
         </section>
 
+        <!-- Reach Me  -->
         <section class="section contact" v-motion-fade-visible>
-            <h2 class="text-h2 text-white d-inline-flex">
-                Reach Me
-                <VImg :width="50" src="@/assets/network-icon.png" />
-            </h2>
+            <div class="d-flex justify-center justify-sm-start">
+                <h2 class="text-h3 text-sm-h2 text-white justify-center">
+                    Reach Me
+                </h2>
+                <VImg :width="50" class="flex-0-0" src="@/assets/network-icon.png" />
+            </div>
             <ContactForm style="margin-top: 2rem;"/>
         </section>
 

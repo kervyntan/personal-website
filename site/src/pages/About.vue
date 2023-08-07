@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import CloudAndSun from "@/views/CloudAndSun.vue"
 import SkillLabel from "@/views/SkillLabel.vue";
+import BulletListItem from "@/views/BulletListItem.vue";
 import { ref } from 'vue'
 
 const showDescription = ref(true)
@@ -20,8 +21,9 @@ const showDescription = ref(true)
             <VTimeline truncate-line="start" align="start" side="end" direction="vertical">
                 <VTimelineItem dot-color="info" size="small">
                     <VCard class="text-white" variant="text">
-                        <h3 class="text-h4 text-md-h3 d-inline-flex align-center">
-                            Who Is Kervyn? <VCardText> (Formally)</VCardText>
+                        <h3 class="text-h4 text-md-h3 text-no-wrap align-center d-inline-flex">
+                            Who Is Kervyn?
+                            <VCardText> (Formally)</VCardText>
                         </h3>
                         <VList bg-color="transparent" tag="ul">
                             <VListItem tag="li">
@@ -30,7 +32,8 @@ const showDescription = ref(true)
                                 University of Singapore! :-)
                                 Over the past 2-3 years, through my internship and project experiences, I have
                                 discovered a
-                                inner passion of mine - <span class="font-weight-bold"> Programming & Problem Solving in general </span>.
+                                inner passion of mine - <span class="font-weight-bold"> Programming & Problem Solving in
+                                    general </span>.
                             </VListItem>
 
                             <VListItem tag="li">
@@ -64,7 +67,8 @@ const showDescription = ref(true)
                                 Vue and ReactJS in order to build a website.
                             </VListItem>
                             <VListItem tag="li">
-                                Other hobbies of mine include reading, cycling on the weekends and getting to know new people!
+                                Other hobbies of mine include reading, cycling on the weekends and getting to know new
+                                people!
                             </VListItem>
                         </VList>
                     </VCard>
@@ -92,26 +96,16 @@ const showDescription = ref(true)
                                 </VRow>
 
                                 <VList tag="ul" bg-color="transparent">
-                                    <VListItem prepend-icon="mdi-circle-small" class="mt-5">
-                                        Built 2 QMS (Queue Management System) using Vue, Vuetify frontend and C#
-                                        backend
-                                        with .NET Core, Entity Framework, Flurl, and SeriLog.
-                                    </VListItem>
+                                    <BulletListItem class="mt-5" text="Built 2 QMS (Queue Management System) using Vue, Vuetify frontend and C#
+                                        backend with .NET Core, Entity Framework, Flurl, and SeriLog." /> 
 
-                                    <VListItem prepend-icon="mdi-circle-small" class="mt-2">
-                                        Experienced in hardware device integration such as ESC/POS Printer using C#.
-                                    </VListItem>
+                                    <BulletListItem class="mt-2" text="Experienced in hardware device integration such as ESC/POS Printer using C#." />
 
-                                    <VListItem prepend-icon="mdi-circle-small" class="mt-2">
-                                        Implemented software engineering principles, including Pull Requests (PRs) and
-                                        Issues on GitHub, to maintain a clean codebase.
-                                    </VListItem>
+                                    <BulletListItem class="mt-2" text="Implemented software engineering principles, including Pull Requests (PRs) and
+                                        Issues on GitHub, to maintain a clean codebase."/>
 
-                                    <VListItem prepend-icon="mdi-circle-small" class="mt-2">
-                                        Developed a RESTful API using C# to synchronize a local SQLite database with
-                                        an
-                                        AWS Cloud database using MQTT Protocol.
-                                    </VListItem>
+                                    <BulletListItem class="mt-2 " text="Developed a RESTful API using C# to synchronize a local SQLite database with
+                                        an AWS Cloud database using MQTT Protocol."/>
                                 </VList>
 
                             </VTimelineItem>
@@ -127,26 +121,13 @@ const showDescription = ref(true)
 
                                     <VList bg-color="transparent" tag="ul">
 
-                                        <VListItem prepend-icon="mdi-circle-small" class="mt-5">
-                                            Created an interactive news page from scratch using HTML, CSS, JavaScript, and
-                                            Slick Slider.
-                                        </VListItem>
+                                        <BulletListItem class="mt-5" text="Created an interactive news page from scratch using HTML, CSS, JavaScript, and Slick Slider." />
 
-                                        <VListItem prepend-icon="mdi-circle-small" class="mt-2">
-                                            Conducted website maintenances and compiled page health, page speed findings
-                                            into
-                                            reports for clients.
-                                        </VListItem>
+                                        <BulletListItem class="mt-2 " text="Conducted website maintenances and compiled page health, page speed findings into reports for clients." />
 
-                                        <VListItem prepend-icon="mdi-circle-small" class="mt-2">
-                                            Assisted in the architecture and conceptualiztion of a QMS (Queue Management
-                                            System).
-                                        </VListItem>
+                                        <BulletListItem class="mt-2" text="Assisted in the architecture and conceptualiztion of a QMS (Queue Management System)."/>
 
-                                        <VListItem prepend-icon="mdi-circle-small" class="mt-2">
-                                            Developed websites using WordPress while employing custom styling to suit
-                                            client’s needs.
-                                        </VListItem>
+                                        <BulletListItem class="mt-2" text="Developed websites using WordPress while employing custom styling to suit client’s needs."/>
                                     </VList>
                                 </VCard>
 
@@ -162,34 +143,23 @@ const showDescription = ref(true)
                                     </VRow>
                                     <VList bg-color="transparent" tag="ul">
 
-                                        <VListItem prepend-icon="mdi-circle-small" class="mt-5">
-                                            Led the development of a hardware devices dashboard using Vue, Vuetify,
-                                            and in-house API.
-                                        </VListItem>
+                                        <BulletListItem class="mt-5" text="Led the development of a hardware devices dashboard using Vue, Vuetify,
+                                            and in-house API."/>
 
-                                        <VListItem prepend-icon="mdi-circle-small" class="mt-2">
-                                            Assisted in building a payment collection system using React frontend,
-                                            MySQL backend and communicating with hardware and payment APIs.
-                                        </VListItem>
+                                        <BulletListItem class="mt-2" text="Assisted in building a payment collection system using React frontend,
+                                            MySQL backend and communicating with hardware and payment APIs."/>
 
-                                        <VListItem prepend-icon="mdi-circle-small" class="mt-2">
-                                            Conceptualized and developed a luggage deposit and retrieval system using
-                                            React frontend, PostgreSQL backend, and Banana PI for the in-house API.
-                                        </VListItem>
+                                        <BulletListItem class="mt-2" text="Conceptualized and developed a luggage deposit and retrieval system using
+                                            React frontend, PostgreSQL backend, and Banana PI for the API."/>
 
-                                        <VListItem prepend-icon="mdi-circle-small" class="mt-2">
-                                            Spearheaded the implementation and development of a website using Shopify,
-                                            involving the creation of custom embedded code using HTML, CSS, and JS.
-                                        </VListItem>
+                                        <BulletListItem class="mt-2" text="Spearheaded the implementation and development of a website using Shopify,
+                                            involving the creation of custom embedded code using HTML, CSS, and JS."/>
 
-                                        <VListItem prepend-icon="mdi-circle-small" class="mt-2">
-                                            Assisted in the development and sitemap construction of websites using
-                                            WordPress.
-                                        </VListItem>
+                                        <BulletListItem class="mt-2" text="Assisted in the development and sitemap construction of websites using
+                                            WordPress."/>
 
-                                        <VListItem prepend-icon="mdi-circle-small" class="mt-2">
-                                            Custom development of a website built on top of a Wix template.
-                                        </VListItem>
+                                        <BulletListItem class="mt-2 " text="Custom development of a website built on top of a Wix template." />
+                                  
                                     </VList>
                                 </VCard>
 
@@ -213,7 +183,6 @@ const showDescription = ref(true)
 
 .v-list-item--density-default:not(.v-list-item--nav).v-list-item--one-line {
     padding-inline-start: 0px !important;
-    padding-inline-end: 0px !important;
 }
 
 .v-list-item__prepend>.v-icon {
